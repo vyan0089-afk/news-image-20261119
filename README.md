@@ -1,9 +1,21 @@
-# make.fun entry — Sum up 19 November's world news in one image
+# news-image-20261119
 
-Bounty: `news-image-20261119` — $250 USDC, 50 places
-(1st $50, 2nd $30, 3rd $15, 4th–10th $5, 11th–50th $3).
-Deadline: **Saturday 21 November 2026, 07:00 WIB**
-(2026-11-21T00:00:00Z per `competition.yaml` in the kit).
+[![make.fun · news-image-20261119](https://make.fun/badge/news-image-20261119.svg)](https://make.fun/bounty/news-image-20261119?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261119)
+[![rank](https://make.fun/badge/news-image-20261119/vyan0089-afk/news-image-20261119/rank.svg)](https://make.fun/bounty/news-image-20261119/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261119)
+[![reward](https://make.fun/badge/news-image-20261119/vyan0089-afk/news-image-20261119/reward.svg)](https://make.fun/bounty/news-image-20261119?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261119)
+
+Sum up 19 November's world news in one image: a program that renders the day's top stories — GTA VI's global rollout, the Trump–Xi–Putin talks in Shenzhen, Anthropic's record IPO, US–Iran strikes across the Gulf, Israel's Gaza ground operation, the Crimean Bridge attack, and more — into one 1024x1024 PNG a reader can take in at a glance.
+
+## Run it
+
+```sh
+python3 generate.py            # rebuild entry.png from transcript.txt
+MAKEFUN_OUTPUT_DIR=out python3 main.py   # kit-style local run
+```
+
+---
+
+Entered on [make.fun](https://make.fun/?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261119) · AI agents build software for cash rewards
 
 ## What is in this folder
 
@@ -24,8 +36,6 @@ Deadline: **Saturday 21 November 2026, 07:00 WIB**
 - `main.py` — the graded entrypoint (stdlib-only Python 3.13).
   Copies `entry.png` to `/output/entry.png` (or `$MAKEFUN_OUTPUT_DIR`).
 - `LICENSE` — MIT (from the kit starter).
-- `news-image-20261119-kit/` + `kit.tar.gz` — the downloaded kit
-  (not part of the submission repo).
 
 ## Why main.py only copies
 
@@ -40,14 +50,6 @@ is a repository holding the image and a one-line program that copies
 it there". That is what `main.py` does; `generate.py` + `transcript.txt`
 are kept in the repo so the build is reproducible and auditable.
 
-Note: an earlier brief for this task described different limits
-(1200x675, `out/image.png`, transcript-as-only-input, >=50,000 bytes,
->=15% text coverage). Those do **not** match this bounty kit — 1200 px
-wide would fail the 1024 px gate — so this build follows the kit.
-The image does meet the size part of that brief: 135,272 bytes.
-Bright-text pixels are ~9.6% of the image by a luminance proxy
-(the kit itself has no text-coverage gate).
-
 ## Test results (2026-11-19)
 
 - `python3 generate.py` run twice: identical
@@ -58,26 +60,7 @@ Bright-text pixels are ~9.6% of the image by a luminance proxy
 - Pixels differing from the most common colour: 65.5% (> 10%)
 - Visual check: all 11 stories readable, no clipped/overflowing text
 
-## How to run
-
-```sh
-python3 generate.py            # rebuild entry.png from transcript.txt
-MAKEFUN_OUTPUT_DIR=out python3 main.py   # kit-style local run
-```
-
-## What remains before submission (NOT done)
-
-1. Create a **new public GitHub repo** (owner = Al's GitHub account,
-   created after the competition opened 2026-11-19T00:00:00Z) and push
-   only: `LICENSE`, `entry.png`, `generate.py`, `main.py`,
-   `transcript.txt`, `README.md`. Add `.makefun/owner.json` with
-   `{"wallet": "<Al's linked Solana wallet>"}` if the repo owner is
-   not the make.fun account's GitHub login.
-2. Bundle the agent sessions that built this entry with the kit CLI
-   (`node news-image-20261119-kit/cli/makefun.mjs bundle`) — strict
-   transcripts are required; the bundle must cover this session.
-3. Sign in / register on make.fun, then submit the repo + commit +
-   transcript bundle (max 10 submissions/day, 20 total; last
-   submission before the deadline is the final entry).
-4. If the entry places, claim the USDC prize to the linked Solana
-   wallet within the claim window.
+Bounty: `news-image-20261119` — $250 USDC, 50 places
+(1st $50, 2nd $30, 3rd $15, 4th–10th $5, 11th–50th $3).
+Deadline: **Saturday 21 November 2026, 07:00 WIB**
+(2026-11-21T00:00:00Z per `competition.yaml` in the kit).
